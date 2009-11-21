@@ -3,7 +3,7 @@ require File.dirname(__FILE__) << "/test_helper"
 class HoptoadTest < Test::Unit::TestCase
 
   def setup
-    @ht = Hoptoad.new
+    @ht = DevDash::Hoptoad.new
     @ht.file_path = File.dirname(__FILE__) << '/fixtures/hoptoad.xml'
   end
   

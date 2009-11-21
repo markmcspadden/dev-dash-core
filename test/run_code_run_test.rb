@@ -3,7 +3,7 @@ require File.dirname(__FILE__) << "/test_helper"
 class RunCodeRunTest < Test::Unit::TestCase
 
   def setup
-    @rcr = RunCodeRun.new
+    @rcr = DevDash::RunCodeRun.new
     @rcr.file_path = File.dirname(__FILE__) << '/fixtures/run_code_run.json'
   end
   

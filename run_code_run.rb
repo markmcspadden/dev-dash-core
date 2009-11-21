@@ -1,33 +1,31 @@
-require "rubygems" # I know...I know...don't do this
+module DevDash
 
-require 'crack'
-require 'yaml'
-
-class RunCodeRun
+  class RunCodeRun
   
-  attr_accessor :file_path
+    attr_accessor :file_path
   
-  attr_accessor :username, :projects
+    attr_accessor :username, :projects
   
-  def fetch
-    user_hash = raw_data["user"]
+    def fetch
+      user_hash = raw_data["user"]
     
-    self.username = user_hash["username"]
-    self.projects = user_hash["projects"]
+      self.username = user_hash["username"]
+      self.projects = user_hash["projects"]
   
-    return true
-  rescue
-    puts $!
-    return false
+      return true
+    rescue
+      puts $!
+      return false
+    end
+  
+    def display
+      raw_data.to_yaml
+    end
+  
+    def raw_data
+      Crack::JSON.parse File.read(self.file_path)    
+    end
+  
   end
-  
-  def display
-    raw_data.to_yaml
-  end
-  
-  def raw_data
-    Crack::JSON.parse File.read(self.file_path)    
-  end
-  
-end
 
+end
