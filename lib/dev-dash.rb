@@ -4,8 +4,7 @@ require "rubygems"
 require 'crack'
 require 'yaml'
 
-require File.dirname(__FILE__) << "/dev-dash/run_code_run"
-require File.dirname(__FILE__) << "/dev-dash/hoptoad"
+require File.dirname(__FILE__) << "/dev-dash/base"
 
 module DevDash
   

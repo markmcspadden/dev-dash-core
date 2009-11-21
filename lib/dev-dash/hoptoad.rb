@@ -1,8 +1,5 @@
 module DevDash
-  class Hoptoad
-  
-    attr_accessor :file_path
-  
+  class Hoptoad < Base  
     attr_accessor :errors
   
     def fetch
@@ -14,14 +11,9 @@ module DevDash
       return false
     end
   
-    def display
-      raw_data.to_yaml
-    end
-  
     # As XML
     def raw_data
       Crack::XML.parse File.read(self.file_path)    
     end
-  
   end
 end
