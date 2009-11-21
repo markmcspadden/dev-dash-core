@@ -1,6 +1,6 @@
 require "rubygems" # I know...I know...don't do this
 
-require 'json'
+require 'crack'
 require 'yaml'
 
 class RunCodeRun
@@ -26,7 +26,7 @@ class RunCodeRun
   end
   
   def raw_data
-    JSON.parse File.read(self.file_path)    
+    Crack::JSON.parse File.read(self.file_path)    
   end
   
 end

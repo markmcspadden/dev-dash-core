@@ -29,9 +29,9 @@ class RunCodeRunTest < Test::Unit::TestCase
   end
   
   def test_display
-    json_display = JSON.parse File.read(@rcr.file_path)
+    crack_display = Crack::JSON.parse File.read(@rcr.file_path)
     
-    yaml_display = json_display.to_yaml
+    yaml_display = crack_display.to_yaml
 
     assert_equal yaml_display, @rcr.display
   end

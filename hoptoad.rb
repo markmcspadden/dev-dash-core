@@ -1,9 +1,8 @@
 require "rubygems" # I know...I know...don't do this
 
-require 'json'
+require 'crack'
 require 'yaml'
 
-require 'crack'
 
 class Hoptoad
   
