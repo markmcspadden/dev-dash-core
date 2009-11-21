@@ -1,10 +1,10 @@
-require File.dirname(__FILE__) << "/test_helper"
+# require File.dirname(__FILE__) << "/../../test_helper"
 
 class HoptoadTest < Test::Unit::TestCase
 
   def setup
     @ht = DevDash::Hoptoad.new
-    @ht.file_path = File.dirname(__FILE__) << '/fixtures/hoptoad.xml'
+    @ht.file_path = File.dirname(__FILE__) << '/../../fixtures/hoptoad.xml'
   end
   
   def do_fetch
