@@ -10,9 +10,7 @@ class RunCodeRun
   attr_accessor :username, :projects
   
   def fetch
-    rcr_json = JSON.parse File.read(self.file_path)
-
-    user_hash = rcr_json["user"]
+    user_hash = raw_data["user"]
     
     self.username = user_hash["username"]
     self.projects = user_hash["projects"]
@@ -24,9 +22,11 @@ class RunCodeRun
   end
   
   def display
-    rcr_json = JSON.parse File.read(self.file_path)
-    
-    rcr_json.to_yaml
+    raw_data.to_yaml
+  end
+  
+  def raw_data
+    JSON.parse File.read(self.file_path)    
   end
   
 end

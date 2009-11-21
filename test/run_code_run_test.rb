@@ -32,14 +32,8 @@ class RunCodeRunTest < Test::Unit::TestCase
     json_display = JSON.parse File.read(@rcr.file_path)
     
     yaml_display = json_display.to_yaml
-    
-    puts yaml_display
-    
-    
-    
+
     assert_equal yaml_display, @rcr.display
-    
-    
   end
 
 end
