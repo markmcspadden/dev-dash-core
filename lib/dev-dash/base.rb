@@ -1,6 +1,8 @@
 module DevDash
   class Base
-    attr_accessor :file_path, :projects  
+    include HTTParty
+    
+    attr_accessor :projects  
     
     # Expected to be overriden
     def raw_data

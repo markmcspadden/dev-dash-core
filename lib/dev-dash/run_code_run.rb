@@ -1,6 +1,8 @@
 module DevDash
   class RunCodeRun < Base  
-    attr_accessor :username
+    format :json
+    
+    attr_accessor :uri, :username
   
     def fetch
       user_hash = raw_data["user"]
@@ -15,7 +17,8 @@ module DevDash
     end
   
     def raw_data
-      Crack::JSON.parse File.read(self.file_path)    
+      # Crack::JSON.parse File.read(self.file_path)    
+      HTTParty.get(uri)
     end
   end
 end

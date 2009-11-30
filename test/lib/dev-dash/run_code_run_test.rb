@@ -4,7 +4,8 @@ class RunCodeRunTest < Test::Unit::TestCase
 
   def setup
     @rcr = DevDash::RunCodeRun.new
-    @rcr.file_path = File.dirname(__FILE__) << '/../../fixtures/run_code_run.json'
+    # @rcr.file_path = File.dirname(__FILE__) << '/../../fixtures/run_code_run.json'
+    @rcr.uri = "http://runcoderun.com/api/v1/json/markmcspadden"
   end
   
   def do_fetch
